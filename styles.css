@@ -1,0 +1,19 @@
+
+body {
+	font-size: 2em;
+	background: #333;
+	color: #CCC;
+}
+
+p {
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	height: 0;
+	text-align: center;
+}
+
+a {
+	color: #FFAE45;
+	text-decoration: none;
+}
