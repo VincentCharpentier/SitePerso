@@ -66,7 +66,21 @@
   left: 100%;
   margin-left: 20px; }
 
-#projects .project .contentBox .icon img {
-  max-width: 100%; }
+#projects .project .icon {
+  transition: opacity 0.3s linear;
+  opacity: 1; }
+  #projects .project .icon img {
+    max-width: 100%; }
+#projects .project .iconSwitch {
+  transition: opacity 0.3s linear;
+  opacity: 0; }
+#projects .project:hover .icon {
+  transition: opacity 0.3s linear;
+  opacity: 0.3; }
+#projects .project:hover .iconSwitch {
+  transition: opacity 0.3s linear;
+  opacity: 1; }
+  #projects .project:hover .iconSwitch .fa-square {
+    opacity: 0.7; }
 
 /*# sourceMappingURL=style-wide.css.map */

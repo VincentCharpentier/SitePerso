@@ -1,3 +1,10 @@
+
+// ##########################################
+// ##									   ##
+// ##             NAVIGATION			   ##
+// ##									   ##
+// ##########################################
+
 $("#menuBar>.nav").click(
 	function(evt) {
 		// ### 1. change menu
@@ -28,10 +35,18 @@ function draw(selector) {
 		$(selector).addClass("active");
 	},100);
 }
-/*
-// onDomReady :
-$(function() {
-	// show home
-	draw("#home");
+
+
+// ##########################################
+// ##									   ##
+// ##             PROJECTS				   ##
+// ##									   ##
+// ##########################################
+
+$(".project").click(function() {
+	if ($(this).hasClass("flip")) {
+		$(this).removeClass("flip");
+	} else {
+		$(this).addClass("flip");
+	}
 });
-*/
