@@ -1,0 +1,141 @@
+
+$primary-color: #FFAE45;
+
+@mixin box-sizing($mode) {
+	-webkit-box-sizing: $mode;
+	-moz-box-sizing: $mode;
+	-ms-box-sizing: $mode;
+	box-sizing: $mode;
+}
+
+@mixin border-radius($rad) {
+	-webkit-border-radius: $rad; 
+	-moz-border-radius: $rad;
+	border-radius: $rad;
+}
+
+
+#menuBar {
+	a:hover {
+		span {
+			transition: opacity 0.4s linear, transform 0.25s linear;
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
+
+#content {
+	width: 70%;
+	left: 15%;
+}
+
+#headLine {
+	font-size: 7em;
+}
+
+
+/* Home */
+#home {
+	img {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+
+
+/* Curriculum */
+$timelineWidth: 20px;
+$background-color: #333;
+#curriculum {
+	#curriculumContent {
+		.timeline {
+			left: 50%;
+			margin-left: - $timelineWidth / 2;
+			border: $timelineWidth/2 solid $primary-color;
+			@include border-radius($timelineWidth/2);
+		}
+
+
+		.exp {
+			width: 50%;
+
+			.bullet {
+				width: $timelineWidth;
+				height: $timelineWidth;
+				@include border-radius($timelineWidth/2);
+				top: $timelineWidth;
+			}
+
+			.bullet::before {
+				border: $timelineWidth/2 solid transparent;
+			}
+
+
+			.date {
+				position: absolute;
+				white-space: nowrap;
+				font-size: 1.2em;
+				color: black;
+			}
+		}
+
+		.exp.left {
+
+			.bullet {
+				left: 100%;
+				margin-left: - $timelineWidth / 2;
+			}
+			.bullet::before {
+				border-left-color: $background-color;
+				margin-left: -$timelineWidth/2 - 2px;
+			}
+			.date {
+				left: 100%;
+				margin-left: 2 * $timelineWidth;
+				top: $timelineWidth;
+			}
+
+			.expContent {
+				margin-right: $timelineWidth;
+			}
+		}
+		.exp.right {
+
+			.bullet {
+				left: 100%;
+				margin-left: - $timelineWidth / 2;
+			}
+			.bullet::before {
+				border-right-color: $background-color;
+				margin-right: -$timelineWidth/2 - 2px;
+			}
+			.date {
+				right: 100%;
+				margin-right: 2 * $timelineWidth;
+				top: $timelineWidth;
+			}
+			.expContent {
+				left: 100%;
+				margin-left: $timelineWidth;
+			}
+		}
+	}
+}
+
+
+
+
+#projects {
+	.project {
+		.contentBox {
+			.icon {
+				img {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+}

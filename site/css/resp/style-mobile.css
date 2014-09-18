@@ -1,0 +1,49 @@
+#content {
+  width: 95%;
+  left: 2.5%; }
+
+#headLine {
+  font-size: 4em; }
+
+/* Home */
+#home {
+  text-align: center; }
+  #home p {
+    text-align: justify; }
+    #home p .mail {
+      display: inline-block;
+      text-align: left; }
+  #home .external {
+    text-align: center; }
+
+/* Curriculum */
+#curriculum #curriculumContent .timeline {
+  left: 0;
+  border: 10px solid #FFAE45;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px; }
+#curriculum #curriculumContent .exp {
+  margin-left: 30px;
+  margin-right: 5px; }
+  #curriculum #curriculumContent .exp .bullet {
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    top: 20px; }
+  #curriculum #curriculumContent .exp .bullet::before {
+    border: 10px solid transparent;
+    border-right-color: #333;
+    margin-right: -10px; }
+  #curriculum #curriculumContent .exp .date {
+    color: #FFAE45;
+    font-style: italic;
+    font-size: 1em; }
+
+#projects .project .contentBox .icon img {
+  max-height: 100%; }
+
+/*# sourceMappingURL=style-mobile.css.map */

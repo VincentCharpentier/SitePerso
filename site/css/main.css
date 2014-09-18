@@ -1,0 +1,304 @@
+@font-face {
+  font-family: "DigitalDotRoadsign";
+  src: url("Digital Dot Roadsign.otf") format("opentype"); }
+body {
+  font: 100% Helvetica, sans-serif;
+  background: #333; }
+
+a {
+  color: #D97A00; }
+
+#headLine {
+  margin-top: 2%;
+  text-align: center;
+  color: #FFAE45;
+  text-shadow: 0 0 20pt #D97A00;
+  font-family: "DigitalDotRoadsign"; }
+  #headLine span {
+    text-shadow: none;
+    color: #CCC;
+    font: 100% Helvetica, sans-serif;
+    font-size: 0.3em;
+    font-style: italic; }
+
+#menuBar {
+  margin-top: 3%;
+  height: auto;
+  width: 100%;
+  font-size: 3em;
+  text-align: center; }
+  #menuBar a {
+    margin: 0 10px 20px 10px;
+    color: #FFAE45;
+    display: inline-block;
+    position: relative;
+    text-decoration: none; }
+    #menuBar a span {
+      font: Helvetica, sans-serif;
+      color: #CCC;
+      transition: opacity 0.25s linear, transform 0.4s linear;
+      opacity: 0;
+      transform: scale(0);
+      background: black;
+      -webkit-border-radius: 3em;
+      -moz-border-radius: 3em;
+      border-radius: 3em;
+      position: absolute;
+      left: 50%;
+      top: -100%;
+      /* fixed width needed */
+      width: 6em;
+      /* half width */
+      margin-left: -3em;
+      margin-top: 5px;
+      padding: 5px 10px;
+      font-size: 0.35em;
+      white-space: nowrap; }
+    #menuBar a span::before {
+      content: ' ';
+      position: absolute;
+      display: block;
+      bottom: -20px;
+      left: 50%;
+      margin-left: -10px;
+      height: 0;
+      width: 0;
+      border: 10px solid transparent;
+      border-top-color: black; }
+  #menuBar a.active::after {
+    content: ' ';
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px;
+    margin-top: -10px;
+    height: 0;
+    width: 0;
+    border: 15px solid transparent;
+    border-bottom-color: white;
+    z-index: 100; }
+
+#content {
+  position: relative;
+  opacity: 1;
+  height: auto;
+  overflow: hidden;
+  padding: 15px;
+  background: #FFF;
+  margin-bottom: 3%;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  box-shadow: 5pt 5pt 20pt 0;
+  font-size: 1.1em;
+  font: 100% Helvetica, sans-serif;
+  transition: max-height 0.5s ease-in;
+  max-height: 3000px; }
+  #content h2 {
+    font-size: 1.7em;
+    font-weight: bold;
+    color: #D97A00;
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FFAE45;
+    margin-bottom: 20px; }
+  #content p {
+    line-height: 1.2em; }
+  #content article {
+    position: relative;
+    left: 0;
+    top: 0;
+    transition: opacity 0.3s linear;
+    opacity: 0; }
+  #content article.active {
+    transition: opacity 0.3s linear;
+    opacity: 1; }
+  #content article.hide {
+    display: none; }
+
+#content.hide {
+  transition: max-height 0.5s ease-out;
+  max-height: 230px; }
+
+#mention {
+  color: #CCC;
+  text-align: center;
+  margin-bottom: 2%; }
+
+/* Specific */
+/* Home */
+#home {
+  display: block;
+  text-align: justify;
+  min-height: 230px; }
+  #home .external {
+    display: block;
+    margin: 5px; }
+    #home .external a {
+      margin: 5px;
+      text-decoration: none; }
+
+/* Curriculum */
+#curriculum {
+  position: relative;
+  height: auto;
+  width: 100%; }
+  #curriculum #curriculumContent {
+    position: relative; }
+    #curriculum #curriculumContent .timeline {
+      width: 0;
+      position: absolute;
+      top: 5px;
+      bottom: 5px; }
+    #curriculum #curriculumContent .bullet {
+      display: block;
+      background: #333;
+      position: absolute;
+      z-index: 200; }
+    #curriculum #curriculumContent .bullet::before {
+      content: ' ';
+      positon: absolute;
+      display: block; }
+    #curriculum #curriculumContent .exp {
+      display: block;
+      height: auto;
+      position: relative;
+      margin-bottom: 20px; }
+      #curriculum #curriculumContent .exp .expContent {
+        position: relative;
+        display: block;
+        background: #333;
+        padding: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        box-shadow: 1pt 1pt 10pt 0 black;
+        color: #CCC; }
+    #curriculum #curriculumContent .title {
+      color: #FFAE45;
+      font-size: 1.15em; }
+    #curriculum #curriculumContent .company {
+      font-weight: bold;
+      font-size: 1.1em; }
+    #curriculum #curriculumContent .location {
+      font-style: italic; }
+    #curriculum #curriculumContent .description {
+      text-align: justify; }
+    #curriculum #curriculumContent .keys {
+      font-style: italic; }
+    #curriculum #curriculumContent .keys::before {
+      content: 'Keywords: ';
+      font-style: normal; }
+
+#projects {
+  /* TODO REMOVE*/
+  text-align: center;
+  height: 100px;
+  /* ############# */ }
+  #projects .project {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    max-height: 200px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 10px;
+    perspective: 1000px; }
+    #projects .project .flipper {
+      transition: 0.6s;
+      transform-style: preserve-3d;
+      position: relative;
+      height: 100%;
+      width: 100%; }
+      #projects .project .flipper .front {
+        z-index: 2;
+        /* for firefox 31 */
+        transform: rotateY(0deg); }
+        #projects .project .flipper .front .title::before {
+          display: block;
+          content: " ";
+          position: absolute;
+          right: 0;
+          top: 0;
+       /*
+z-index: 100000;*/
+          border: 10px solid #FFF;
+          -webkit-border-radius: 0 0 0 5px;
+          -moz-border-radius: 0 0 0 5px;
+          border-radius: 0 0 0 5px;
+          border-bottom-color: #FFAE45;
+          border-left-color: #FFAE45;
+          box-shadow: -2px 2px 3px 0 #000; }
+      #projects .project .flipper .back {
+        transform: rotateY(180deg); }
+        #projects .project .flipper .back .title::before {
+          display: block;
+          content: " ";
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: -10;
+          border: 10px solid #FFF;
+          -webkit-border-radius: 0 0 5px 0;
+          -moz-border-radius: 0 0 5px 0;
+          border-radius: 0 0 5px 0;
+          border-bottom-color: #333;
+          border-right-color: #333; }
+      #projects .project .flipper .front, #projects .project .flipper .back {
+        backface-visibility: hidden;
+        background: #333;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%; }
+    #projects .project .title {
+      background: #333;
+      position: relative;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #CCC;
+      z-index: 15; }
+    #projects .project .contentBox {
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+      box-sizing: border-box;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      position: relative; }
+      #projects .project .contentBox .content {
+        padding: 10px;
+        text-align: justify;
+        color: white; }
+      #projects .project .contentBox .icon {
+        z-index: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #CCC;
+        top: 0;
+        left: 0;
+        text-align: center;
+        transition: opacity 0.6s linear;
+        opacity: 1; }
+  #projects .project:hover {
+    /*
+    .icon {
+    	transition: opacity 0.6s linear;
+    	opacity: 0.3;
+    }*/ }
+    #projects .project:hover .flipper {
+      transform: rotateY(180deg); }
+
+/*# sourceMappingURL=main.css.map */

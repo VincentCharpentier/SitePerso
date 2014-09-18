@@ -1,0 +1,98 @@
+
+$primary-color: #FFAE45;
+
+@mixin box-sizing($mode) {
+	-webkit-box-sizing: $mode;
+	-moz-box-sizing: $mode;
+	-ms-box-sizing: $mode;
+	box-sizing: $mode;
+}
+
+@mixin border-radius($rad) {
+	-webkit-border-radius: $rad; 
+	-moz-border-radius: $rad;
+	border-radius: $rad;
+}
+
+#content {
+	width: 95%;
+	left: 2.5%;
+}
+
+#headLine {
+	font-size: 4em;
+}
+
+
+/* Home */
+#home {
+	text-align: center;
+
+	p {
+		text-align: justify;
+
+		.mail {
+			display: inline-block;
+			text-align: left;
+		}
+	}
+
+
+	.external {
+		text-align: center;
+	}
+}
+
+
+/* Curriculum */
+$timelineWidth: 20px;
+$background-color: #333;
+#curriculum {
+	#curriculumContent {
+		.timeline {
+			left: 0;
+			border: $timelineWidth/2 solid $primary-color;
+			@include border-radius($timelineWidth/2);
+		}
+
+
+		.exp {
+			margin-left: $timelineWidth * 3 / 2;
+			margin-right: 5px;
+
+			.bullet {
+				left: -$timelineWidth * 3 / 2;
+				width: $timelineWidth;
+				height: $timelineWidth;
+				@include border-radius($timelineWidth/2);
+				top: $timelineWidth;
+			}
+
+			.bullet::before {
+				border: $timelineWidth/2 solid transparent;
+				border-right-color: $background-color;
+				margin-right: -$timelineWidth/2;
+			}
+
+
+			.date {
+				color: $primary-color;
+				font-style: italic;
+				font-size: 1em;
+			}
+		}
+	}
+}
+
+
+#projects {
+	.project {
+		.contentBox {
+			.icon {
+				img {
+					max-height: 100%;
+				}
+			}
+		}
+	}
+}
