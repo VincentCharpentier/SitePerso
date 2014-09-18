@@ -130,11 +130,30 @@ $background-color: #333;
 
 #projects {
 	.project {
-		.contentBox {
-			.icon {
-				img {
-					max-width: 100%;
-				}
+		.icon {
+			transition: opacity 0.3s linear;
+			opacity: 1;
+			img {
+				max-width: 100%;
+			}
+		}
+		
+		.iconSwitch {
+			transition: opacity 0.3s linear;
+			opacity: 0;
+		}
+	}
+
+	.project:hover {
+		.icon {
+			transition: opacity 0.3s linear;
+			opacity: 0.3;
+		}
+		.iconSwitch {
+			transition: opacity 0.3s linear;
+			opacity: 1;
+			.fa-square {
+				opacity: 0.7;
 			}
 		}
 	}

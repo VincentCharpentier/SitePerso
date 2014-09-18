@@ -191,97 +191,49 @@ a {
       content: 'Keywords: ';
       font-style: normal; }
 
-#projects {
-  /* TODO REMOVE*/
-  text-align: center;
+#projects .wait {
   height: 100px;
-  /* ############# */ }
-  #projects .project {
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    overflow: hidden;
-    width: 100%;
-    max-height: 200px;
+  text-align: center; }
+#projects .project {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  perspective: 1000px;
+  cursor: pointer; }
+  #projects .project .flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
     position: relative;
-    display: inline-block;
-    margin-bottom: 10px;
-    perspective: 1000px; }
-    #projects .project .flipper {
-      transition: 0.6s;
-      transform-style: preserve-3d;
-      position: relative;
-      height: 100%;
-      width: 100%; }
-      #projects .project .flipper .front {
-        z-index: 2;
-        /* for firefox 31 */
-        transform: rotateY(0deg); }
-        #projects .project .flipper .front .title::before {
-          display: block;
-          content: " ";
-          position: absolute;
-          right: 0;
-          top: 0;
+    height: 100%;
+    width: 100%; }
+    #projects .project .flipper .front {
+      z-index: 2;
+      /* for firefox 31 */
+      transform: rotateY(0deg); }
+      #projects .project .flipper .front .title {
+        background: #333; }
+      #projects .project .flipper .front .title::before {
+        display: block;
+        content: " ";
+        position: absolute;
+        right: 0;
+        top: 0;
        /*
 z-index: 100000;*/
-          border: 10px solid #FFF;
-          -webkit-border-radius: 0 0 0 5px;
-          -moz-border-radius: 0 0 0 5px;
-          border-radius: 0 0 0 5px;
-          border-bottom-color: #FFAE45;
-          border-left-color: #FFAE45;
-          box-shadow: -2px 2px 3px 0 #000; }
-      #projects .project .flipper .back {
-        transform: rotateY(180deg); }
-        #projects .project .flipper .back .title::before {
-          display: block;
-          content: " ";
-          position: absolute;
-          left: 0;
-          top: 0;
-          z-index: -10;
-          border: 10px solid #FFF;
-          -webkit-border-radius: 0 0 5px 0;
-          -moz-border-radius: 0 0 5px 0;
-          border-radius: 0 0 5px 0;
-          border-bottom-color: #333;
-          border-right-color: #333; }
-      #projects .project .flipper .front, #projects .project .flipper .back {
-        backface-visibility: hidden;
-        background: #333;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        overflow: hidden;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%; }
-    #projects .project .title {
-      background: #333;
-      position: relative;
-      padding: 10px;
-      font-weight: bold;
-      font-size: 1.2em;
-      color: #CCC;
-      z-index: 15; }
-    #projects .project .contentBox {
-      display: block;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -ms-box-sizing: border-box;
-      box-sizing: border-box;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      position: relative; }
-      #projects .project .contentBox .content {
-        padding: 10px;
-        text-align: justify;
-        color: white; }
-      #projects .project .contentBox .icon {
+        border: 10px solid #FFF;
+        -webkit-border-radius: 0 0 0 5px;
+        -moz-border-radius: 0 0 0 5px;
+        border-radius: 0 0 0 5px;
+        border-bottom-color: #FFAE45;
+        border-left-color: #FFAE45;
+        box-shadow: -2px 2px 3px 0 #000; }
+      #projects .project .flipper .front .icon {
         z-index: 0;
         position: absolute;
         width: 100%;
@@ -289,16 +241,71 @@ z-index: 100000;*/
         background: #CCC;
         top: 0;
         left: 0;
-        text-align: center;
-        transition: opacity 0.6s linear;
-        opacity: 1; }
-  #projects .project:hover {
-    /*
-    .icon {
-    	transition: opacity 0.6s linear;
-    	opacity: 0.3;
-    }*/ }
-    #projects .project:hover .flipper {
+        text-align: center; }
+      #projects .project .flipper .front .iconSwitch {
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 100;
+        color: #333; }
+        #projects .project .flipper .front .iconSwitch .fa-arrow-right {
+          color: #FFAE45; }
+    #projects .project .flipper .back {
       transform: rotateY(180deg); }
+      #projects .project .flipper .back .title {
+        background: #FFAE45;
+        color: #333;
+        text-align: center; }
+      #projects .project .flipper .back .title::before {
+        display: block;
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -10;
+        border: 10px solid #FFF;
+        -webkit-border-radius: 0 0 5px 0;
+        -moz-border-radius: 0 0 5px 0;
+        border-radius: 0 0 5px 0;
+        border-bottom-color: #FFAE45;
+        border-right-color: #FFAE45; }
+    #projects .project .flipper .front, #projects .project .flipper .back {
+      backface-visibility: hidden;
+      background: #333;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%; }
+  #projects .project .title {
+    position: relative;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #CCC;
+    z-index: 15; }
+  #projects .project .contentBox {
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative; }
+    #projects .project .contentBox .content {
+      padding: 10px;
+      text-align: justify;
+      color: #CCC; }
+#projects .project.flip .flipper {
+  transform: rotateY(180deg); }
 
 /*# sourceMappingURL=main.css.map */

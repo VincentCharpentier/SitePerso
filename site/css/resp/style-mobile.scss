@@ -87,11 +87,14 @@ $background-color: #333;
 
 #projects {
 	.project {
-		.contentBox {
-			.icon {
-				img {
-					max-height: 100%;
-				}
+
+		.title {
+			text-align: center;
+		}
+
+		.icon {
+			img {
+				max-height: 100%;
 			}
 		}
 	}

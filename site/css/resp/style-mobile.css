@@ -43,7 +43,9 @@
     font-style: italic;
     font-size: 1em; }
 
-#projects .project .contentBox .icon img {
+#projects .project .title {
+  text-align: center; }
+#projects .project .icon img {
   max-height: 100%; }
 
 /*# sourceMappingURL=style-mobile.css.map */
